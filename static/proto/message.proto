@@ -1,0 +1,9 @@
+syntax = "proto3";  //指定版本，必须要写（proto3、proto2）
+
+message Message{
+    string uid = 1;
+    string content = 2;
+    string gravatar = 3;
+    string time = 4;
+    string type = 5;
+}
