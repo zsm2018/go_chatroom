@@ -1,8 +1,8 @@
 package conn
 
 import (
-	"exercise/chatroom/websocket/message"
-	"exercise/chatroom/websocket/libs"
+	"chatroom/message"
+	"chatroom/libs"
 	"fmt"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/websocket"
@@ -103,7 +103,6 @@ func Broadcast(data []byte) {
 		defer tmpval.mutex.Unlock()
 
 		if err := tmpval.Conn.WriteMessage(websocket.BinaryMessage, data); err != nil {
-			fmt.Println("err: ", err)
 			return true
 		}
 		return true
